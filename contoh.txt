@@ -1,0 +1,23 @@
+LoginPage
+   │
+   └───▶ this.open() 
+               │
+               ▼
+     Cari di LoginPage dulu
+     Jika tidak ada, ke parent
+
+Page
+  └── open()
+
+
+
+
+LoginPage
+   │
+   └───▶ super.open()
+               │
+               ▼
+         Langsung ke parent
+
+Page
+  └── open()

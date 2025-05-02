@@ -1,0 +1,77 @@
+ stage('Checkout') {
+            when {
+                anyOf { branch 'master'; branch 'develop'; branch 'staging'; branch 'regress' }
+            }
+            steps {
+                echo 'Checking out from Git'
+                checkout scm
+            }
+        }
+ stage('Build and Deploy') {
+            environment {
+                KUBECONFIG = "${env.JENKINS_HOME}/workspace/${env.BRANCH_NAME}/kube/config"
+                VERSION_PREFIX = '1.0'
+            }
+            stages {
+                stage('Deploy to development') {
+                    when {
+                        branch 'develop'
+                    }
+                    environment {
+                        ALPHA = "${env.VERSION_PREFIX}-alpha${env.BUILD_NUMBER}"
+                        DEV_CONFIG = "config/dev.conf"
+                        NAMESPACE = "default"
+                    }
+                    steps {
+                        withCredentials([file(credentialsId: 'a', variable: 'kubeconfig')]) {
+                        }
+                    }
+                }
+                stage('Deploy to staging') {
+                    when {
+                        branch 'staging'
+                    }
+                    environment {
+                        BETA = "${env.VERSION_PREFIX}-beta${env.BUILD_NUMBER}"
+                        STAGE_CONFIG = "config/stage.conf"
+                        NAMESPACE = "default"
+                    }
+                    steps {
+                        withCredentials([file(credentialsId: 'a', variable: 'kubeconfig')]) {
+                        }
+                    }
+                }
+                stage('Deploy to regress') {
+                    when {
+                        branch 'regress'
+                    }
+                    environment {
+                        REGRESS = "${env.VERSION_PREFIX}-regress${env.BUILD_NUMBER}"
+                        REGRESS_CONFIG = "config/regress.conf"
+                        NAMESPACE= "regress"
+                    }
+                    steps {
+                        withCredentials([file(credentialsId: 'a', variable: 'kubeconfig')]) {
+                        }
+                    }
+                }
+                stage('Deploy to production') {
+                    when {
+                        branch 'master'
+                    }
+                    environment {
+                        PRD_CONFIG = "config/prd.conf"
+                        VERSION = VersionNumber([
+                            versionNumberString: '${BUILDS_ALL_TIME}',
+                            worstResultForIncrement: 'SUCCESS',
+                            versionPrefix : '1.0.'
+                        ]);
+                        NAMESPACE = "default"
+                    }
+                    steps {
+                        withCredentials([file(credentialsId: 'a', variable: 'kubeconfig')]) {
+                        }
+                    }
+                }
+            }
+        }

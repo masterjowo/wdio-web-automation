@@ -1,0 +1,34 @@
+{
+  "name": "bbd_v2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "npx wdio run wdio.conf.js",
+    "wdio": "npx wdio",
+    "wdio_run": "wdio run ./wdio.conf.js",
+    "ganerate_definitions": "npx cucumber-js",
+    "allure_server": "npx http-server ./allure-report",
+    "wdio_i": "npm install webdriverio @wdio/cli –save-dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@wdio/allure-reporter": "^9.12.3",
+    "@wdio/cli": "^9.11.0",
+    "@wdio/cucumber-framework": "^9.10.1",
+    "@wdio/local-runner": "^9.10.1",
+    "@wdio/ocr-service": "^2.2.5",
+    "@wdio/spec-reporter": "^9.10.1",
+    "chromedriver": "^134.0.3",
+    "wdio-chromedriver-service": "^8.1.1"
+  },
+  "dependencies": {
+    "allure-commandline": "^2.33.0",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "tesseract.js": "^6.0.1",
+    "wdio-ocr-service": "^1.1.3"
+  }
+}
