@@ -1,4 +1,3 @@
-
 # Project Title
 
 | Keyword | Equivalent(s)     |
@@ -7,7 +6,14 @@
 | `Background` | `Dasar, Latar Belakang` |
 | `Rule` | `Rule, Aturan` |
 | `Scenario` | `Skenario` |
-| `Examples` | `Contoh, Misal` |
+| `Scenario Outline` | `Skenario konsep, Garis-Besar Skenario` |
+| `Examples` | `Contoh,Misal` |
+| `Given` | `Dengan, Diketahui , Diasumsikan , Bila , Jika` |
+| `When` | `Ketika` |
+| `Then` | `MakaKemudian` |
+| `And` | `Dan` |
+| `But` | `TapiTetapi` |
+
 
 ### Tinjauan Pustaka
 
