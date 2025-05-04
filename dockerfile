@@ -56,8 +56,10 @@ RUN apt-get update && apt-get install -y default-jre
 
 WORKDIR /app
 COPY . /app
+# install libtesseract-ocr and tesseract-ocr-ind
 RUN apt-get update && apt-get install -y tesseract-ocr
 RUN apt-get install -y libtesseract-dev
+RUN wget https://github.com/tesseract-ocr/tessdata/raw/main/ind.traineddata -P /usr/share/tesseract-ocr/4.00/tessdata/
 RUN npm install
 COPY . /app
 CMD ["node","server.js"]

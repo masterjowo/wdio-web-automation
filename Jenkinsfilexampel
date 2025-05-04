@@ -1,21 +1,22 @@
  stage('Checkout') {
             when {
-                anyOf { branch 'master'; branch 'develop'; branch 'staging'; branch 'regress' }
+                anyOf { branch 'test_master'; branch 'test_develop'; branch 'test_staging'; branch 'test_regress' }
             }
             steps {
                 echo 'Checking out from Git'
                 checkout scm
             }
         }
- stage('Build and Deploy') {
+
+ stage('Build and Deploy Test') {
             environment {
-                KUBECONFIG = "${env.JENKINS_HOME}/workspace/${env.BRANCH_NAME}/kube/config"
-                VERSION_PREFIX = '1.0'
+                KUBECONFIG = "${env.JENKINS_HOME}/data/${env.BRANCH_NAME}/k8s/config"
+                VERSION_PREFIX = "${env.VERSION_PREFIX}"
             }
             stages {
                 stage('Deploy to development') {
                     when {
-                        branch 'develop'
+                        branch 'test_develop'
                     }
                     environment {
                         ALPHA = "${env.VERSION_PREFIX}-alpha${env.BUILD_NUMBER}"
