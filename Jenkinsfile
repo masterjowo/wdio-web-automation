@@ -32,7 +32,7 @@ pipeline {
                     '''
                 }
         }
-
+    }
     post {
         success {
             // Kirim notifikasi ke Discord setelah build
