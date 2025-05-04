@@ -53,4 +53,3 @@ pipeline {
 
 //https://www.jenkins.io/doc/pipeline/steps/workflow-basic-steps/#pwd-determine-current-directory
     }
-}
