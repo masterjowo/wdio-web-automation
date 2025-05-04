@@ -1,7 +1,7 @@
 
 import { Given, When, Then, Before, After } from '@wdio/cucumber-framework';
 import { expect, browser } from '@wdio/globals';
-import loginPage from '../../../pageobjects/Login/Login.page.js';
+import loginPage from '../../../pageobjects/Login/login.page.js';
 // import DashboardPage from '../pageobjects/Dashboard/Dashboard.page.js';
 import allureReporter from '@wdio/allure-reporter';
 import loc from '../../../pageobjects/Login/LocatorLogin.page.js';

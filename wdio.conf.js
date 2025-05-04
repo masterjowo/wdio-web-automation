@@ -52,7 +52,16 @@ export const config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-        browserName: 'chrome'
+        maxInstances: 1,
+        browserName: 'chrome',
+        'goog:chromeOptions': {
+          args: [//https://peter.sh/experiments/chromium-command-line-switches/
+            '--headless',//untuk mode headless
+            '--disable-gpu',// applicable to windows os only
+            //'--window-size=1280,800',
+            '--no-sandbox',
+          ]
+        }
     }],
 
     //
@@ -148,7 +157,7 @@ export const config = {
         // <string[]> (file/dir) require files before executing features
         require: [
             './features/step-definitions/**/*.js',
-            './support/hooks.js'
+            './support/Hooks.js'
         ],
         // Jika true, akan menampilkan seluruh stack trace saat error terjadi. Jika false, hanya info penting yang ditampilkan (lebih ringkas).
         backtrace: false,

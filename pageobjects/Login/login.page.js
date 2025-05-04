@@ -1,5 +1,5 @@
 // Login.page.js
-import Page from '../page.js';
+import Page from '../Page.js';
 import { browser,expect } from '@wdio/globals';
 import loc from './LocatorLogin.page.js';
 

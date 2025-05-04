@@ -1,6 +1,6 @@
 // features/support/hooks.js
 import { Before, After } from '@wdio/cucumber-framework';
-import loginPage from '../pageobjects/Login/Login.page.js';
+import loginPage from '../pageobjects/Login/login.page.js';
 
 Before(async function (scenario) {
     console.log(`(hooks.js) Sebelum Scenario: `);
