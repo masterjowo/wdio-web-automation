@@ -27,7 +27,7 @@ pipeline {
             steps {
                         
                     sh'''
-                    docker exec -it allure_report_wdio_web_coun sh -c "npx wdio run wdio.conf.js"
+                    docker exec -t allure_report_wdio_web_coun sh -c "npx wdio run wdio.conf.js"
                     '''
                 }
         }
