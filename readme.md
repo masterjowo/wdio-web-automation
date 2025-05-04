@@ -113,3 +113,5 @@ Hooks adalah fungsi yang dipanggil pada berbagai tahap siklus hidup pengujian. B
 Allure Report adalah alat pelaporan (reporting tool) yang digunakan untuk menampilkan hasil pengujian otomatis dalam bentuk visual yang interaktif dan mudah dibaca. Allure sangat populer di kalangan QA dan developer karena menyajikan laporan yang tidak hanya informatif, tetapi juga rapi dan profesional.
 
 - Dokumentasi reporter Allure: [Allure Reporter](https://webdriver.io/docs/allure-reporter)
+
+![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
