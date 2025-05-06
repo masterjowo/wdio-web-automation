@@ -121,7 +121,11 @@ export const config = {
                 imagesFolder: "ImgOcr",
                 language: "ind",//pastikan C:\Program Files\Tesseract-OCR\tessdata ada bahasa indo
             },
+            
         ],
+        ['devtools', {
+            debuggerAddress: '10.0.0.3:9222'
+        }]
     ],
     //
     // Framework you want to run your specs with.

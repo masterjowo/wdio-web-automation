@@ -115,3 +115,7 @@ Allure Report adalah alat pelaporan (reporting tool) yang digunakan untuk menamp
 - Dokumentasi reporter Allure: [Allure Reporter](https://webdriver.io/docs/allure-reporter)
 
 ![Logo](https://github.com/masterjowo/wdio-web-automation/blob/updatev1/doc/allure.png)
+
+
+https://v5.webdriver.io/docs/devtools-service.html
+https://chromedevtools.github.io/devtools-protocol/tot/Network/

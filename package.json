@@ -25,6 +25,7 @@
     "wdio-chromedriver-service": "^8.1.1"
   },
   "dependencies": {
+    "@wdio/devtools-service": "^8.42.0",
     "allure-commandline": "^2.33.0",
     "dotenv": "^16.4.7",
     "express": "^5.1.0",

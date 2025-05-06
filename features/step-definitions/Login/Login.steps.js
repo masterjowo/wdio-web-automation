@@ -14,7 +14,33 @@ import loc from '../../../pageobjects/Login/LocatorLogin.page.js';
 // });
 
 When(/^saya login melakukan (\S+) dan (\S+)$/, async (username, password) => {
+    const { metrics } = await browser.cdp('Performance', 'getMetrics');
     await loginPage.login(username, password);
+    const metricsMap = {};
+    metrics.forEach(metric => {
+        metricsMap[metric.name] = metric.value;
+    });
+
+    console.log('📈 Performance Metrics:', metricsMap);
+
+    // Kirim metrics ini ke Allure report sebagai attachment
+    await browser.call(async () => {
+        const allure = await import('@wdio/allure-reporter').then(m => m.default || m);
+        allure.addAttachment(
+            'Performance Metrics',
+            JSON.stringify(metricsMap, null, 2), // Dibuat pretty-print JSON
+            'application/json'
+        );
+    });
+
+    // Kalau mau, bisa juga tambahin beberapa step manual ke Allure
+    await browser.call(async () => {
+        const allure = await import('@wdio/allure-reporter').then(m => m.default || m);
+        allure.addStep('First Meaningful Paint: ' + metricsMap.FirstMeaningfulPaint + ' ms');
+        allure.addStep('DomContentLoaded: ' + metricsMap.DomContentLoaded + ' ms');
+    });
+
+    
     await allureReporter.addFeature(' Halaman login');
     await allureReporter.addStory(`saya login melakukan ${username} dan ${password}`);
 });
