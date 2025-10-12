@@ -41,10 +41,20 @@ RUN apt-get update && apt-get install -y google-chrome-stable
 ENV CHROME_BIN=/usr/bin/google-chrome
 ENV DISPLAY=:99
 
-# Download and install Chromedriver
-RUN CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+\.\d+') && \
-    echo "Detected Chrome version: $CHROME_VERSION" && \
-    wget -O /tmp/chromedriver.zip "https://storage.googleapis.com/chrome-for-testing-public/${CHROME_VERSION}/linux64/chromedriver-linux64.zip" && \
+# # Download and install Chromedriver
+# RUN CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+\.\d+') && \
+#     echo "Detected Chrome version: $CHROME_VERSION" && \
+#     wget -O /tmp/chromedriver.zip "https://storage.googleapis.com/chrome-for-testing-public/${CHROME_VERSION}/linux64/chromedriver-linux64.zip" && \
+#     unzip /tmp/chromedriver.zip -d /tmp/ && \
+#     mv /tmp/chromedriver-linux64/chromedriver /usr/local/bin/chromedriver && \
+#     chmod +x /usr/local/bin/chromedriver && \
+#     rm -rf /tmp/chromedriver*
+# ATAU, jika Anda harus menginstal dari sumber:
+# Ini mengunduh versi ChromeDriver yang paling cocok berdasarkan MAJOR version Chrome
+RUN CHROME_MAJOR_VERSION=$(google-chrome --version | grep -oP '\d+' | head -1) && \
+    CHROME_DRIVER_VERSION=$(curl -s "https://googlechromelabs.github.io/chrome-for-testing/LATEST_RELEASE_${CHROME_MAJOR_VERSION}") && \
+    echo "Detected Chrome version: ${CHROME_MAJOR_VERSION}, using ChromeDriver version: ${CHROME_DRIVER_VERSION}" && \
+    wget -O /tmp/chromedriver.zip "https://storage.googleapis.com/chrome-for-testing-public/${CHROME_DRIVER_VERSION}/linux64/chromedriver-linux64.zip" && \
     unzip /tmp/chromedriver.zip -d /tmp/ && \
     mv /tmp/chromedriver-linux64/chromedriver /usr/local/bin/chromedriver && \
     chmod +x /usr/local/bin/chromedriver && \
