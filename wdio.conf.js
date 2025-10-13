@@ -59,7 +59,7 @@ export const config = {
                 '--headless',//untuk mode headless
                 //'--disable-gpu',// applicable to windows os only
                 //'--window-size=1280,800',
-                //'--no-sandbox',
+                '--no-sandbox',
             ]
         }
     }],
