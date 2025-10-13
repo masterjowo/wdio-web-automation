@@ -1,6 +1,6 @@
 import allure from 'allure-commandline'
 export const config = {
-    // automationProtocol: 'devtools',//webdriver /devtool/webdriver-bidi
+    automationProtocol: 'webdriver',//webdriver /devtool/,'devtools'
     //
     // ====================
     // Runner Configuration
@@ -56,10 +56,10 @@ export const config = {
         browserName: 'chrome',
         'goog:chromeOptions': {
             args: [//https://peter.sh/experiments/chromium-command-line-switches/
-                '--headless',//untuk mode headless
-                '--disable-gpu',// applicable to windows os only
+                //'--headless',//untuk mode headless
+                //'--disable-gpu',// applicable to windows os only
                 //'--window-size=1280,800',
-                '--no-sandbox',
+                //'--no-sandbox',
             ]
         }
     }],
@@ -124,9 +124,6 @@ export const config = {
             },
 
         ],
-        ['devtools', {
-            debuggerAddress: '10.0.0.3:9222'
-        }]
     ],
     //
     // Framework you want to run your specs with.

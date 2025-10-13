@@ -8,6 +8,7 @@ Before(async function (scenario) {
     await browser.setWindowSize(1280, 800);
     await loginPage.open('/');
     // await browser.url('/');
+
 });
 
 After(async function (scenario) {
