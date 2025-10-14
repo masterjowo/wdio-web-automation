@@ -27,6 +27,7 @@ pipeline {
             steps {
                         
                     sh'''
+                    docker exec -t allure_report_wdio_web_coun sh -c "chromedriver --port=9515"
                     docker exec -t allure_report_wdio_web_coun sh -c "npx wdio run wdio.conf.js"
                     '''
                 }
