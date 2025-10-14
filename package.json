@@ -22,6 +22,7 @@
     "@wdio/local-runner": "^9.10.1",
     "@wdio/ocr-service": "^2.2.5",
     "@wdio/spec-reporter": "^9.10.1",
+    "chromedriver": "^134.0.3",
     "wdio-chromedriver-service": "^8.1.1"
   },
   "dependencies": {
