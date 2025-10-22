@@ -30,6 +30,7 @@ Cucumber adalah framework untuk pengujian otomatis (automated testing) yang dira
 
 ```bash
 .\node_modules\.bin\cucumber-js
+
 ```
 
 - Dokumentasi resmi Gherkin dan bahasa yang didukung: [Cucumber Gherkin Languages](https://cucumber.io/docs/gherkin/languages)
@@ -65,17 +66,21 @@ services: [
     },
   ],
 ],
+
 ```
 
 - Halaman unduhan dan instalasi Tesseract OCR:
-  - [Windows](https://github.com/UB-Mannheim/tesseract/wiki)
-  - [Semua OS](https://tesseract-ocr.github.io/tessdoc/Installation.html)
+
+   - [Windows](https://github.com/UB-Mannheim/tesseract/wiki)
+   - [Semua OS](https://tesseract-ocr.github.io/tessdoc/Installation.html)
+
 - Dokumentasi pengujian OCR dengan WebdriverIO: [OCR Testing](https://webdriver.io/docs/ocr-testing/getting-started)
 - Data pelatihan bahasa Indonesia untuk Tesseract: [ind.traineddata](https://github.com/tesseract-ocr/tessdata/blob/main/ind.traineddata)
 
 ### 4. ChromeDriver
 
 ChromeDriver adalah tool atau komponen perangkat lunak yang digunakan untuk mengendalikan browser Google Chrome secara otomatis melalui WebDriver API. ChromeDriver berfungsi sebagai jembatan antara skrip otomasi (seperti yang ditulis dalam Selenium) dengan browser Chrome.
+
 #### Contoh Konfigurasi pada `wdio.conf.js`:
 
 ```javascript
@@ -91,10 +96,14 @@ ChromeDriver adalah tool atau komponen perangkat lunak yang digunakan untuk meng
           ]
         }
     }],
+
 ```
+
 - Dokumentasi kemampuan ChromeDriver:
-  - [Kemampuan ChromeDriver](https://developer.chrome.com/docs/chromedriver/capabilities?hl=id#h.p_ID_106)
-  - [Objek ChromeOptions](https://developer.chrome.com/docs/chromedriver/capabilities?hl=id#chromeoptions_object)
+
+   - [Kemampuan ChromeDriver](https://developer.chrome.com/docs/chromedriver/capabilities?hl=id#h.p_ID_106)
+   - [Objek ChromeOptions](https://developer.chrome.com/docs/chromedriver/capabilities?hl=id#chromeoptions_object)
+
 - Daftar lengkap opsi baris perintah Chromium: [Chromium Command-Line Switches](https://peter.sh/experiments/chromium-command-line-switches/)
 
 ### 5. Hooks pada WebdriverIO
@@ -110,12 +119,14 @@ Hooks adalah fungsi yang dipanggil pada berbagai tahap siklus hidup pengujian. B
 - **onComplete**: Dipanggil setelah semua pengujian selesai (global, 1x di akhir run).
 
 ### 6. Allure Report
+
 Allure Report adalah alat pelaporan (reporting tool) yang digunakan untuk menampilkan hasil pengujian otomatis dalam bentuk visual yang interaktif dan mudah dibaca. Allure sangat populer di kalangan QA dan developer karena menyajikan laporan yang tidak hanya informatif, tetapi juga rapi dan profesional.
 
 - Dokumentasi reporter Allure: [Allure Reporter](https://webdriver.io/docs/allure-reporter)
 
-![Logo](https://github.com/masterjowo/wdio-web-automation/blob/updatev1/doc/allure.png)
+https://prnt.sc/U2fQaviiVuhG
 
+![Logo](https://github.com/masterjowo/wdio-web-automation/blob/updatev1/doc/allure.png)
 
 https://v5.webdriver.io/docs/devtools-service.html
 https://chromedevtools.github.io/devtools-protocol/tot/Network/

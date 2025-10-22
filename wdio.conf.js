@@ -51,15 +51,15 @@ export const config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-  hostname: 'localhost',
-  port: 9515,
-  path: '/',
+    hostname: 'localhost',
+    port: 9515,
+    path: '/',
     capabilities: [{
         maxInstances: 1,
         browserName: 'chrome',
         'goog:chromeOptions': {
             args: [//https://peter.sh/experiments/chromium-command-line-switches/
-                '--headless',//untuk mode headless
+                //'--headless',//untuk mode headless
                 //'--disable-gpu',// applicable to windows os only
                 //'--window-size=1280,800',
                 '--no-sandbox',
