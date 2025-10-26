@@ -52,9 +52,9 @@ export const config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    hostname: 'localhost',
-    port: 9515,
-    path: '/',
+    // hostname: 'localhost',
+    // port: 9515,
+    // path: '/',
     capabilities: [{
         //maxInstances: 1,
         // See https://webdriver.io/blog/2023/07/31/driver-management
