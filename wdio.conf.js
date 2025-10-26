@@ -56,12 +56,14 @@ export const config = {
     port: 9515,
     path: '/',
     capabilities: [{
-        maxInstances: 1,
+        //maxInstances: 1,
+        // See https://webdriver.io/blog/2023/07/31/driver-management
+        browserVersion: 'stable',
         browserName: 'chrome',
         'goog:chromeOptions': {
             args: [//https://peter.sh/experiments/chromium-command-line-switches/
-                //'--headless',//untuk mode headless
-                //'--disable-gpu',// applicable to windows os only
+                '--headless',//untuk mode headless
+                '--disable-gpu',// applicable to windows os only
                 //'--window-size=1280,800',
                 '--no-sandbox',
                 '--user-data-dir=/tmp/wdio-user-data-' + workerId,
