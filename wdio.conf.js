@@ -121,7 +121,7 @@ export const config = {
     // services: [],
     services: [
         // your other services
-        'chromedriver',
+        // 'chromedriver',
         [
             "ocr",
             {
