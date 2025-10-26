@@ -1,4 +1,6 @@
 // features/support/hooks.js
+process.setMaxListeners(0); 
+// Ini memastikan batas listener diatur segera setelah Node.js memuat modul ini.
 import { Before, After } from '@wdio/cucumber-framework';
 import loginPage from '../pageobjects/Login/login.page.js';
 
