@@ -1,2 +1,4 @@
 node_modules
 /ImgOcr/ocr/
+allure-report
+allure-results
