@@ -1,5 +1,4 @@
 import allure from 'allure-commandline'
-const workerId = process.env.WDIO_WORKER_ID || '0';
 export const config = {
     automationProtocol: 'webdriver',//webdriver /devtool/,'devtools'
     //
@@ -66,7 +65,6 @@ export const config = {
                 '--disable-gpu',// applicable to windows os only
                 //'--window-size=1280,800',
                 '--no-sandbox',
-                '--user-data-dir=/tmp/wdio-user-data-' + workerId,
             ]
         }
     }],
@@ -121,7 +119,7 @@ export const config = {
     // services: [],
     services: [
         // your other services
-        // 'chromedriver',
+        'chromedriver',
         [
             "ocr",
             {
