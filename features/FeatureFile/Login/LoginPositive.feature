@@ -9,5 +9,5 @@ Fitur: login online shop
     Maka user dapat melihat pesan <message>
 
     Contoh:
-      | username      | password     | message  |
-      | standard_user | secret_sauce | Products |
+      | username        | password       | message    |
+      | "standard_user" | "secret_sauce" | "Products" |
