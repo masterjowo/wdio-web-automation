@@ -15,7 +15,7 @@ import fs from 'fs';
 //     await allureReporter.addStory('saya melakukan login ke halaman vini');
 // });
 
-When(/^saya login melakukan (\S+) dan (\S+)$/, async (username, password) => {
+When('saya login melakukan {string} dan {string}', async (username, password) => {
 
     await loginPage.login(username, password);
     const events = [];
@@ -61,7 +61,7 @@ When(/^saya login melakukan (\S+) dan (\S+)$/, async (username, password) => {
     // await allureReporter.addFeature(' Halaman login');
     // await allureReporter.addStory(`saya login melakukan ${username} dan ${password}`);
 });
-Given(/^user sudah berada pada halaman awal, user dapat melihat "([^"]+)"$/, async (string) => {
+Given('user sudah berada pada halaman awal, user dapat melihat {string}', async (string) => {
     const data = await loc.text.waitForDisplayed({ timeout: 5000 });
     const element = loc.text; // WebdriverIO element
     await element.waitForDisplayed({ timeout: 5000 });
@@ -76,7 +76,7 @@ When('user menekan tombol login', async () => {
     await allureReporter.addStory('user menekan tombol login');
 });
 
-Then(/^user dapat melihat pesan (\S+)$/, async (message) => {
+Then('user dapat melihat pesan {string}', async (message) => {
     await expect(await loginPage.ValidatePage()).toHaveText(message);
     await allureReporter.addFeature(' Halaman login');
     await allureReporter.addStory(`user dapat melihat pesan ${message}`);
