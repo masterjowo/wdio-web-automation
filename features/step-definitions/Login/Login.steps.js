@@ -81,21 +81,6 @@ Then('user dapat melihat pesan {string}', async (message) => {
     await allureReporter.addFeature(' Halaman login');
     await allureReporter.addStory(`user dapat melihat pesan ${message}`);
 });
-Ketika('saya login melakukan pengisian {string} dan {string}', async (username, password) => {
-   await loginPage.login(username, password);
-    const events = [];
-
-    browser.on('network.responseCompleted', (params) => {
-    events.push({
-        time: Date.now(),
-        url: params.request?.url || params.response?.url,
-        status: params.response?.status,
-        mime: params.response?.mimeType || null
-    });
-    });
-
-    // di after hook atau akhir test
-    after(async () => {
-    fs.writeFileSync('./network-events.json', JSON.stringify(events, null, 2));
-    });
+Ketika('saya login melakukan pengisian {string} dan {string}', (s, s2) => {
+  // Write code here that turns the phrase above into concrete actions
 })
