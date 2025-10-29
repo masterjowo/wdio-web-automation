@@ -8,5 +8,5 @@ Feature: login online shop
     Then user dapat melihat pesan <message>
 
     Examples:
-      | username      | password       | message                                                                   |
-      | standard_user | secret_sauasce | Epic sadface: Username and password do not match any user in this service |
+      | username        | password       | message                                                                     |
+      | "standard_user" | "secret_sauce" | "Epic sadface: Username and password do not match any user in this service" |
