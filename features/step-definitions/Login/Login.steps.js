@@ -81,6 +81,7 @@ Then('user dapat melihat pesan {string}', async (message) => {
     await allureReporter.addFeature(' Halaman login');
     await allureReporter.addStory(`user dapat melihat pesan ${message}`);
 });
-When('saya login melakukan pengisian {string} dan {string}', (s, s2) => {
+When(/^saya login melakukan pengisian (.*) dan (.*)$/,async (username, password) => {
   // Write code here that turns the phrase above into concrete actions
+  await loginPage.login(username, password);
 })
