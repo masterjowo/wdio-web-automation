@@ -85,3 +85,8 @@ When(/^saya login melakukan pengisian (.*) dan (.*)$/,async (username, password)
   // Write code here that turns the phrase above into concrete actions
   await loginPage.login(username, password);
 })
+ Then(/^user dapat melihat pesan (\S+)$/, async (message) =>  {
+   await  expect(await loginPage.ValidatePage()).toHaveText(message);
+   await allureReporter.addFeature(' Halaman login');
+    await allureReporter.addStory(`user dapat melihat pesan ${message}`);
+  });
