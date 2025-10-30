@@ -35,7 +35,7 @@ class LoginPage extends Page {
     // const result = await browser.ocrGetText();
     // console.log('result = ', JSON.stringify(result, null, 2));
 
-    await loc.btnSubmit.click();                  // klik tombol
+    // await loc.btnSubmit.click();                  // klik tombol
   
   }
   // async PageTitle() {
