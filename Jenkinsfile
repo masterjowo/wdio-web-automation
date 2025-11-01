@@ -12,7 +12,7 @@ pipeline {
                 // Checkout kode dari repositori
                 git branch: "${env.BRANCH_NAME}", url: 'https://github.com/masterjowo/wdio-web-automation.git'
                 sh 'pwd'
-                sh 'docker exec -t allure_report_wdio_web_coun sh -c "bash cleanup.sh"'
+                //sh 'docker exec -t allure_report_wdio_web_coun sh -c "bash cleanup.sh"'
                 sh'docker compose up --build -d --abort-on-container-exit'
             }
         }
