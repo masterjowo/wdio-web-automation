@@ -12,7 +12,7 @@ pipeline {
                 // Checkout kode dari repositori
                 git branch: "${env.BRANCH_NAME}", url: 'https://github.com/masterjowo/wdio-web-automation.git'
                 sh 'pwd'
-                sh'docker compose down'
+                sh'ddocker compose down --volumes --remove-orphans'
             }
         }
         stage('Continuous_Build') {
