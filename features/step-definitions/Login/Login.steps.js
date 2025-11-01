@@ -9,11 +9,6 @@ import fs from 'fs';
 
 
 
-// Given('saya melakukan login ke halaman vini', async () => {
-//     // await loginPage.open('/');
-//     await allureReporter.addFeature(' Halaman login');
-//     await allureReporter.addStory('saya melakukan login ke halaman vini');
-// });
 
 // When('saya login melakukan {string} dan {string}', async (username, password) => {
 
