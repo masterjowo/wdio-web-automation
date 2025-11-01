@@ -13,7 +13,6 @@ pipeline {
                 git branch: "${env.BRANCH_NAME}", url: 'https://github.com/masterjowo/wdio-web-automation.git'
                 sh 'pwd'
                 sh'docker compose down'
-                sh'docker rm allure_report_wdio_web_coun'
             }
         }
         stage('Continuous_Build') {
