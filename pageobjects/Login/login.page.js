@@ -24,10 +24,10 @@ class LoginPage extends Page {
     this.data = new DataSementaras();
   }
 
-  async login(username, password) {
+  async login(email, password) {
     const currentUrl = await browser.getUrl();
     this.data.setTitikUrl(currentUrl);
-    await loc.inputUsername.setValue(username);   // gunakan locator
+    await loc.inputEmail.setValue(email);   // gunakan locator
     await loc.inputPassword.setValue(password);
 
     // contoh jeda / OCR, dsb
@@ -60,6 +60,11 @@ class LoginPage extends Page {
   async btnsubmit() {
     await loc.btnSubmit.click(); 
   }
+  async getLoginTitle() {
+    await loc.LoginTitle.waitForDisplayed({ timeout: 5000 });
+    return loc.LoginTitle
+  }
+
   async open(path) {
     try {
       console.log('=== OPEN FUNCTION CALLED ===');

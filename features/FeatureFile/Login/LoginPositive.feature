@@ -1,13 +1,18 @@
 # language: id
-Fitur: login online shop
+Fitur: Login Online Shop
+  Sebagai pengguna,
+  Saya ingin dapat melakukan login dengan benar,
+  Sehingga saya bisa mengakses halaman produk dalam aplikasi.
 
   @Sprint2B @TestCase1
-  Skenario konsep: Sebagai pengguna saya dapat login dengan benar (positive case)
-    Diasumsikan user sudah berada pada halaman awal, user dapat melihat "Swag Labs"
-    Ketika saya login melakukan pengisian <username> dan <password>
-    Dan user menekan tombol login
-    Maka user dapat melihat pesan <message>
+  Skenario: Pengguna berhasil login dengan kredensial yang valid
+    Diketahui pengguna berada pada halaman utama dan dapat melihat teks "Welcome to our store"
+    Jika pengguna menekan tombol Login
+    Maka pengguna diarahkan ke halaman "Welcome, Please Sign In!" atau halaman login
+    Ketika pengguna memasukkan <email> dan <password>
+    Jika pengguna menekan tombol Login atau Submit
+    Maka pengguna dapat melihat email telah login <nama_email>
 
     Contoh:
-      | username      | password     | message  |
-      | standard_user | secret_sauce | Products |
+      | email              | password   | nama_email         |
+      | testsaja@gmail.com | admin12345 | testsaja@gmail.com |

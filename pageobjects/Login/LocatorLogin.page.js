@@ -7,16 +7,16 @@ import { $ } from '@wdio/globals';
  *   await loc.inputUsername.setValue('foo')
  */
 class LoginLocators {
-  get inputUsername() {       // <input id="user_id">
-    return $('//*[@id="user-name"]');
+  get inputEmail() {       // <input id="user_id">
+    return $('//*[@name="Email"]');
   }
 
   get inputPassword() {       // <input id="user_secret">
-    return $('//*[@id="password"]');
+    return $('//*[@name="Password"]');
   }
 
   get btnSubmit() {           // <button type="submit">
-    return $('//*[@id="login-button"]');
+    return $('//*[@class="button-1 login-button"]');
   }
   get text() {           // <div class="text">
     return $('//div[contains(text(), "Swag Labs")]');
@@ -27,6 +27,10 @@ class LoginLocators {
   get textsucceed() {           // <div class="text">
     return $('//*[@class="title"]');
   }
+  get LoginTitle() {           // <div class="text">
+    return $('//h1');
+  }
+
 }
 
 // Ekspor satu instance supaya tingal `import loc from ...`
