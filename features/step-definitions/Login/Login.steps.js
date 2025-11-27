@@ -14,6 +14,13 @@ When('user menekan tombol login', async () => {
 });
 
 
+When('pengguna menekan tombol Login OCR', async () => {
+  await browser.ocrClickOnText({ text: "Log in" });
+  await allureReporter.addFeature(' Halaman login');
+  await allureReporter.addStory('user menekan tombol login');
+});
+
+
 Then('pengguna diarahkan ke halaman {string} atau halaman login', async (string) => {
   const element = await loginPage.getLoginTitle();
   // await element.waitForDisplayed({ timeout: 5000 });
@@ -42,18 +49,3 @@ Then(/^user dapat melihat pesan (.*)$/, async (message) => {
   await allureReporter.addStory(`user dapat melihat pesan ${message}`);
 });
 
-Then('user dapat melihat website error', async () => {
-  const globalErrorMock = await browser.mock('**', {
-    method: '*'
-  });
-  // 2. Set Respons Paksa (Status 400)
-  globalErrorMock.respond(
-    { error: 'Forced network error' },
-    {
-      statusCode: 400, // PAKSA STATUS CODE MENJADI 400
-      headers: { 'Content-Type': 'application/json' }
-    }
-  );
-  await browser.pause(5000);
-
-});
