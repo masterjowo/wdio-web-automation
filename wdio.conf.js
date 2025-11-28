@@ -61,7 +61,7 @@ export const config = {
         browserName: 'chrome',
         'goog:chromeOptions': {
             args: [//https://peter.sh/experiments/chromium-command-line-switches/
-                //'--headless',//untuk mode headless
+                '--headless',//untuk mode headless
                 '--disable-gpu',// applicable to windows os only
                 '--window-size=1920,1080',
                 '--no-sandbox',
