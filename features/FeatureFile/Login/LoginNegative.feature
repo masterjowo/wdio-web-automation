@@ -7,7 +7,7 @@ Fitur: User melakukan pengetesan mengunakan ocr pada Login Online Shop
   @Sprint2B @TestCase1
   Skenario: Pengguna berhasil login dengan kredensial yang valid
     Diketahui pengguna berada pada halaman utama dan dapat melihat teks "Welcome to our store"
-    Jika pengguna menekan tombol Login OCR
+    Jika pengguna menekan tombol Login
     Maka pengguna diarahkan ke halaman "Welcome, Please Sign In!" atau halaman login
     Ketika pengguna memasukkan <email> dan <password>
     Jika pengguna menekan tombol Login atau Submit
