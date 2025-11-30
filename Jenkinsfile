@@ -22,9 +22,9 @@ pipeline {
         }
         stage('Continuous_Build') {
                     steps {
-                        script {
-                            sh'docker compose up --build -d'
-                        }
+                        sh'docker compose up --build -d'
+                        // script {  
+                        // }
                     }
                 } 
                 

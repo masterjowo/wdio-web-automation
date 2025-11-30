@@ -1,6 +1,6 @@
  stage('Checkout') {
             when {
-                anyOf { branch 'test_master'; branch 'test_develop'; branch 'test_staging'; branch 'test_regress' }
+                anyOf { branch 'test_master'; branch 'test_staging' }
             }
             steps {
                 echo 'Checking out from Git'
@@ -14,42 +14,14 @@
                 VERSION_PREFIX = "${env.VERSION_PREFIX}"
             }
             stages {
-                stage('Deploy to development') {
-                    when {
-                        branch 'test_develop'
-                    }
-                    environment {
-                        ALPHA = "${env.VERSION_PREFIX}-alpha${env.BUILD_NUMBER}"
-                        DEV_CONFIG = "config/dev.conf"
-                        NAMESPACE = "default"
-                    }
-                    steps {
-                        withCredentials([file(credentialsId: 'a', variable: 'kubeconfig')]) {
-                        }
-                    }
-                }
                 stage('Deploy to staging') {
                     when {
-                        branch 'staging'
+                        branch 'test_staging'
                     }
                     environment {
                         BETA = "${env.VERSION_PREFIX}-beta${env.BUILD_NUMBER}"
                         STAGE_CONFIG = "config/stage.conf"
                         NAMESPACE = "default"
-                    }
-                    steps {
-                        withCredentials([file(credentialsId: 'a', variable: 'kubeconfig')]) {
-                        }
-                    }
-                }
-                stage('Deploy to regress') {
-                    when {
-                        branch 'regress'
-                    }
-                    environment {
-                        REGRESS = "${env.VERSION_PREFIX}-regress${env.BUILD_NUMBER}"
-                        REGRESS_CONFIG = "config/regress.conf"
-                        NAMESPACE= "regress"
                     }
                     steps {
                         withCredentials([file(credentialsId: 'a', variable: 'kubeconfig')]) {
