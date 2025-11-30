@@ -1,4 +1,5 @@
 import allure from 'allure-commandline'
+import path from "node:path";
 export const config = {
    automationProtocol: 'webdriver',//webdriver /devtool/,'devtools'
    //
@@ -132,6 +133,19 @@ export const config = {
          },
 
       ],
+      [
+            "visual",
+            {
+                // Some options, see the docs for more
+                baselineFolder: path.join(process.cwd(), "baseline"),
+                formatImageName: "{tag}-{logName}-{width}x{height}",
+                screenshotPath: path.join(process.cwd(), "tmp"),
+                savePerInstance: true,
+                auitsaveBaseline: true,
+                // ... more options
+            },
+        ]
+
    ],
    //
    // Framework you want to run your specs with.

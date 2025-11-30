@@ -7,7 +7,7 @@ import loginPage from '../pageobjects/Login/login.page.js';
 Before(async function (scenario) {
     console.log(`(hooks.js) Sebelum Scenario: `);
     // Bisa isi dengan navigasi, login, setup, dsb
-    await browser.setWindowSize(1280, 800);
+    await browser.setWindowSize(1200, 1081);
     //await browser.reloadSession();
     await loginPage.open('/');
     // await browser.url('/');

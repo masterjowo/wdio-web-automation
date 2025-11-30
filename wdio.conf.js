@@ -1,4 +1,5 @@
 import allure from 'allure-commandline'
+import path from "node:path";
 export const config = {
     automationProtocol: 'webdriver',//webdriver /devtool/,'devtools'
     //
@@ -45,7 +46,7 @@ export const config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 10,
+    maxInstances: 1,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -130,6 +131,19 @@ export const config = {
             },
 
         ],
+        [
+            "visual",
+            {
+                // Some options, see the docs for more
+                baselineFolder: path.join(process.cwd(), "baseline"),
+                formatImageName: "{tag}-{logName}-{width}x{height}",
+                screenshotPath: path.join(process.cwd(), "tmp"),
+                savePerInstance: true,
+                auitsaveBaseline: true,
+                // ... more options
+            },
+        ]
+
     ],
     //
     // Framework you want to run your specs with.
