@@ -7,8 +7,8 @@ import loginPage from '../pageobjects/Login/login.page.js';
 Before(async function (scenario) {
     console.log(`(hooks.js) Sebelum Scenario: `);
     // Bisa isi dengan navigasi, login, setup, dsb
-    // await browser.setWindowSize(1280, 800);
-    await browser.reloadSession();
+    await browser.setWindowSize(1280, 800);
+    //await browser.reloadSession();
     await loginPage.open('/');
     // await browser.url('/');
 
@@ -21,5 +21,9 @@ After(async function (scenario) {
     //await browser.reloadSession();
     // Kalau butuh clear browser, cukup lakukan:
     await browser.deleteCookies();
+    await browser.execute(() => {
+        localStorage.clear();
+        sessionStorage.clear();
+    });
 
 });
