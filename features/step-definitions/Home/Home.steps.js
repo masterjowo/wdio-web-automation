@@ -8,7 +8,9 @@ import Homeloc from '../../../pageobjects/Home/LocatorHome.page.js';
 import fs from 'fs';
 
 Given('pengguna berada pada halaman utama dan dapat melihat teks {string}', async (string) => {
-  await expect(browser).toMatchScreenSnapshot(`homepage-page`, { threshold: 0.1 });
+  await expect(browser).toMatchScreenSnapshot(`homepage-page`,
+     //{ threshold: 0.1 }
+    );
   const element = await HomePage.PageTitle();
   await element.waitForDisplayed({ timeout: 5000 });
   await expect(element).toHaveText(string);
