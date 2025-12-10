@@ -64,7 +64,7 @@ export const config = {
             args: [//https://peter.sh/experiments/chromium-command-line-switches/
                 //'--headless',//untuk mode headless
                 '--disable-gpu',// applicable to windows os only
-                //'--window-size=1920,1080',
+                '--window-size=1920,1080',
                 '--no-sandbox',
 
             ]
@@ -78,7 +78,7 @@ export const config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'warn',
+    logLevel: 'debug',
     //
     // Set specific log levels per logger
     // loggers:
@@ -130,19 +130,19 @@ export const config = {
                 language: "ind",//pastikan C:\Program Files\Tesseract-OCR\tessdata ada bahasa indo
             },
 
-        ],
-        [
-            "visual",
-            {
-                // Some options, see the docs for more
-                baselineFolder: path.join(process.cwd(), "baseline"),
-                formatImageName: "{tag}-{logName}-{width}x{height}",
-                screenshotPath: path.join(process.cwd(), "tmp"),
-                savePerInstance: true,
-                auitsaveBaseline: true,
-                // ... more options
-            },
-        ]
+        ],'intercept'
+        // [
+        //     "visual",
+        //     {
+        //         // Some options, see the docs for more
+        //         baselineFolder: path.join(process.cwd(), "baseline"),
+        //         formatImageName: "{tag}-{logName}-{width}x{height}",
+        //         screenshotPath: path.join(process.cwd(), "tmp"),
+        //         savePerInstance: true,
+        //         auitsaveBaseline: true,
+        //         // ... more options
+        //     },
+        // ]
 
     ],
     //

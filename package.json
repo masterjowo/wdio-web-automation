@@ -24,6 +24,7 @@
     "@wdio/ocr-service": "^2.2.7",
     "@wdio/spec-reporter": "^9.10.1",
     "@wdio/visual-service": "^9.0.2",
+    "wdio-intercept-service": "^4.4.1",
     "webdriverio": "^9.11.0"
   },
   "dependencies": {

@@ -1,6 +1,6 @@
  stage('Checkout') {
             when {
-                anyOf { branch 'test_master'; branch 'test_staging' }
+                anyOf { branch 'main'; branch 'test_staging' }
             }
             steps {
                 echo 'Checking out from Git'
@@ -30,7 +30,7 @@
                 }
                 stage('Deploy to production') {
                     when {
-                        branch 'master'
+                        branch 'main'
                     }
                     environment {
                         PRD_CONFIG = "config/prd.conf"

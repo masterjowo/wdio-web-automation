@@ -12,6 +12,7 @@ Fitur: Login Online Shop
     Ketika pengguna memasukkan <email> dan <password>
     Jika pengguna menekan tombol Login atau Submit
     Maka pengguna dapat melihat email telah login <nama_email>
+    Maka memastikan tidak ada permintaan jaringan yang menghasilkan status 4XX
 
     Contoh:
       | email              | password   | nama_email         |
