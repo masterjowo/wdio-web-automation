@@ -12,7 +12,8 @@ pipeline {
                 // Checkout kode dari repositori
                 git branch: "${env.BRANCH_NAME}", url: 'https://github.com/masterjowo/wdio-web-automation.git'
                 sh 'pwd'
-                sh'docker compose down --v --remove-orphans'
+                //sh'docker compose down --volume --remove-orphans'
+                sh 'docker compose down -v --remove-orphans'
                 sh'docker rmi allure_report_wdio_web'
                 sh ''' 
                 sudo rm wdio.conf.js
