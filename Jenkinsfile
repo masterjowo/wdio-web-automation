@@ -1,5 +1,5 @@
 pipeline {
-    //agent any  // Menjalankan pipeline pada agen manapun yang tersedia atau node atau vm 
+    agent any  // Menjalankan pipeline pada agen manapun yang tersedia atau node atau vm 
     //agent { label 'tencent_cloud_vps2_agent1' }
     environment {
         // Definisikan variabel lingkungan jika diperlukan
