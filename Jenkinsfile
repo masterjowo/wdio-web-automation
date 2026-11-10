@@ -15,10 +15,15 @@ pipeline {
                 //sh'docker compose down --volume --remove-orphans'
                 sh 'docker compose down -v '
                 //sh'docker rmi allure_report_wdio_web'
+                // sh ''' 
+                // sudo rm wdio.conf.js
+                // sudo mv wdio.conf.txt wdio.conf.js
+                // '''
                 sh ''' 
-                sudo rm wdio.conf.js
-                sudo mv wdio.conf.txt wdio.conf.js
+                rm wdio.conf.js
+                mv wdio.conf.txt wdio.conf.js
                 '''
+                
             }
         }
         stage('Continuous_Build') {
