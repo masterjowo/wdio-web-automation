@@ -14,7 +14,7 @@ pipeline {
                 sh 'pwd'
                 //sh'docker compose down --volume --remove-orphans'
                 sh 'docker compose down -v '
-                sh'docker rmi allure_report_wdio_web'
+                //sh'docker rmi allure_report_wdio_web'
                 sh ''' 
                 sudo rm wdio.conf.js
                 sudo mv wdio.conf.txt wdio.conf.js
